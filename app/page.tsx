@@ -488,17 +488,48 @@ export default function Page() {
         <div className="section-label">About me <span>01</span></div>
         <div className="about-copy">
           <p className="section-lead">
-            I&apos;m Toni Blair... an IIT Kharagpur engineer operating at the intersection of product content, interface design, and full-stack systems.
+            I&apos;m Toni Blair, an Ocean Engineering student at IIT Kharagpur graduating in 2028 who somehow ended up falling deep into the world of software, AI, and design.
           </p>
           <p>
-            I believe words are load-bearing structural elements—especially in AI products where people describe intent in language and judge results without reading code. I take features from problem definition, Figma components, and vocabulary standards straight through to shipped, production code.
+            I&apos;m naturally curious about how things work. When I come across something interesting, I rarely stop at knowing <em>what</em> it does — I want to understand <em>why</em> it works, what&apos;s happening underneath it, and how I could build it myself. That curiosity has taken me from exploring Linux and operating systems to building full-stack applications, experimenting with AI, and designing digital products.
+          </p>
+
+          <h3>What I work with</h3>
+          <p>
+            I work across <strong>software development, AI, and product design</strong>. I&apos;m building my skills in full-stack development, backend systems, databases, APIs, Git, and Linux, while exploring AI/LLM applications and generative technology. On the creative side, I enjoy UI/UX, visual design, branding, and turning ideas into interfaces that actually feel like products.
           </p>
           <p>
-            My engineering foundation spans React, Next.js, TypeScript, FastAPI, Python, PostgreSQL, and low-level ANSI C. Dual-degree training in Ocean Engineering &amp; Naval Architecture taught me structural load tolerances, damping, and systems thinking—discipline I bring to digital product resilience.
+            I&apos;m also continuing to explore the engineering side of things through my Ocean Engineering background, particularly systems, underwater technology, and the way complex physical systems work.
+          </p>
+
+          <h3>How I think</h3>
+          <p>
+            I don&apos;t like learning technology just by memorizing how to use it.
           </p>
           <p>
-            Beyond software: I led the design vertical for Samudramanthan (OENA Dept Fest), served as Maintenance &amp; Socult Secretary at Rajendra Prasad Hall, and won a Gold Medal in Sketching at the Inter-Hall General Championship.
+            I prefer to <strong>build something, break it, figure out why it broke, understand the underlying system, and then build it better.</strong>
           </p>
+          <p>
+            That&apos;s probably why my projects tend to jump between different areas. One project might teach me databases and backend architecture, another might take me into Linux internals, while another lets me experiment with branding and visual design.
+          </p>
+          <p>
+            For me, the project is often the excuse to go down the rabbit hole.
+          </p>
+
+          <h3>What I&apos;m building toward</h3>
+          <p>
+            I&apos;m interested in the space where <strong>engineering, software, AI, and design overlap</strong>.
+          </p>
+          <p>
+            I want to become someone who can take an idea from a rough thought, understand the problem behind it, design the experience, engineer the system, and turn it into something real.
+          </p>
+          <p>
+            I&apos;m still learning, and I don&apos;t want to pretend otherwise. I&apos;d rather show the process — the things I&apos;m building, the things I&apos;m breaking, and the things I&apos;m learning along the way.
+          </p>
+
+          <div className="about-mantra">
+            Build → Break → Understand → Rebuild.
+          </div>
         </div>
 
         <div className="about-edu">
