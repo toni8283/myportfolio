@@ -2,7 +2,8 @@
   <rect width="180" height="180" rx="42" fill="#111111" />
   <rect x="2" y="2" width="176" height="176" rx="40" stroke="#2c2826" stroke-width="2.5" fill="none" />
   <g style="font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;">
-    <text x="74" y="122" text-anchor="middle" font-size="94" font-weight="700" fill="#FFE8E0" letter-spacing="-1px">TB</text>
-    <circle cx="138" cy="116" r="8" fill="#FF8A66" />
+    <text x="50" y="122" text-anchor="middle" font-size="90" font-weight="700" fill="#FFE8E0">T</text>
+    <circle cx="89" cy="116" r="7.5" fill="#FF8A66" />
+    <text x="128" y="122" text-anchor="middle" font-size="90" font-weight="700" fill="#FFE8E0">B</text>
   </g>
 </svg>
