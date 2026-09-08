@@ -25,7 +25,11 @@ export const metadata: Metadata = {
   authors: [{ name: 'Toni Blair', url: 'https://github.com/toni8283' }],
   creator: 'Toni Blair',
   icons: {
-    icon: '/icon.svg',
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon-dark-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
     apple: '/apple-icon.png',
   },
   openGraph: {
