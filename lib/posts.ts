@@ -21,6 +21,124 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: 'we-were-fine-yesterday',
+    title: 'We Were Fine Yesterday',
+    date: '09.09.26',
+    readTime: '3 min read',
+    tag: 'Personal Note',
+    excerpt: 'On losing someone who never gave you the ending you deserved, grieving possibilities, and learning to answer your own life.',
+    sections: [
+      {
+        text: [
+          'An imagined future.',
+          'The conversations you thought you would have.',
+          'The jokes you thought you would make.',
+          'The ordinary days you assumed would exist.',
+          'The version of the future where that person was still around.',
+          'That future never technically existed.',
+          'But your mind had already lived in it.',
+        ],
+      },
+      {
+        text: [
+          'That is why losing an imagined future can hurt almost as much as losing a real past.',
+          'You are not only saying goodbye to what happened.',
+          'You are saying goodbye to what you thought might happen.',
+          'And nobody teaches us how to grieve possibilities.',
+          'There is no ceremony for them.',
+          'No photograph.',
+          'No final moment.',
+          'Just a quiet realization:',
+        ],
+        callout: '“That was never going to happen.”',
+      },
+      {
+        text: [
+          'And then another small piece of you lets go.',
+          'I think that is what I am learning now.',
+        ],
+      },
+      {
+        heading: 'Some people leave without an ending',
+        text: [
+          'Some people leave without giving us the ending we deserved.',
+          'Some conversations remain unfinished.',
+          'Some questions never get answers.',
+          'Some people become memories before we are ready for them to.',
+          'And sometimes, the most loving thing you can do is not hold on harder.',
+          'Sometimes it is to open your hand.',
+          'Not because what you held was worthless.',
+          'Because it mattered.',
+          'And because something mattered, you should be grateful that it existed rather than destroy yourself trying to make it exist forever.',
+        ],
+      },
+      {
+        heading: 'Remembering without breaking',
+        text: [
+          'I don\'t know whether I will ever completely stop missing her.',
+          'Maybe I don\'t need to.',
+          'Maybe the goal was never to forget.',
+        ],
+        callout: 'Maybe the goal is simply to remember without breaking.',
+      },
+      {
+        text: [
+          'To look back without running backward.',
+          'To care without chasing.',
+          'To love without losing yourself.',
+          'To accept the silence without letting it silence your own life.',
+          'And eventually, to wake up one morning and realize that you are no longer waiting.',
+          'You are living.',
+        ],
+      },
+      {
+        heading: 'The ending I actually want',
+        text: [
+          'That is probably the ending I want.',
+          'Not her coming back.',
+          'Not revenge.',
+          'Not regret.',
+          'Not some cinematic reunion.',
+          'Just this:',
+        ],
+        callout: 'I want to become so present in my own life that I no longer need someone else\'s message to prove that the day is worth living.',
+      },
+      {
+        heading: 'Checking a silent phone at three in the morning',
+        text: [
+          'And maybe someday, when I look back at the person I was during those nights, checking a silent phone at three in the morning, I won\'t laugh at him.',
+          'I won\'t call him weak.',
+          'I won\'t call him stupid.',
+          'I\'ll probably just understand.',
+          'He cared.',
+          'He got attached.',
+          'He got hurt.',
+          'He didn\'t know what to do with the silence.',
+          'So he waited.',
+          'And then, eventually, he learned not to.',
+          'He put the phone down.',
+          'He looked around.',
+          'His life was still there.',
+          'Messy.',
+          'Unfinished.',
+          'Expensive.',
+          'Complicated.',
+          'Full of things he still had to figure out.',
+          'But alive.',
+          'Waiting for him.',
+        ],
+      },
+      {
+        callout: 'And for the first time in a long time, he decided to answer. Not her message. His own life.',
+      },
+      {
+        text: [
+          '- Toni',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'sometimes-all-you-need-is-someone-to-say-yes',
     title: 'Sometimes, All You Need Is Someone to Say Yes',
     date: '09.09.26',
