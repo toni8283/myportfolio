@@ -766,6 +766,334 @@ h2 em {
   color: var(--foreground);
 }
 
+/* ==========================================================================
+   Reading Modes for Personal Notes (Article Reader)
+   ========================================================================== */
+
+/* Reading Toolbar & Theme Switcher */
+.reading-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.reading-theme-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px 4px 10px;
+  background: var(--read-card-bg, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--read-card-border, rgba(255, 255, 255, 0.1));
+  border-radius: 9999px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.reading-theme-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--read-muted, #ad9e99);
+  user-select: none;
+}
+
+.reading-theme-options {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.reading-theme-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 9px;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-family: var(--font-body);
+  color: var(--read-muted, #ad9e99);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reading-theme-btn:hover {
+  color: var(--read-fg, #f5ddd5);
+  background: rgba(128, 128, 128, 0.12);
+}
+
+.reading-theme-btn.active {
+  background: var(--read-card-active, rgba(255, 255, 255, 0.14));
+  color: var(--read-h2, #ffffff);
+  border-color: var(--read-border, rgba(255, 255, 255, 0.2));
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--theme-swatch);
+  border: 1px solid var(--theme-border);
+  flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reading-theme-btn.active .theme-circle {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px var(--read-accent, #ff8566);
+}
+
+@media (max-width: 860px) {
+  .reading-theme-btn .theme-btn-label {
+    display: none;
+  }
+  .reading-theme-btn {
+    padding: 6px;
+  }
+  .theme-circle {
+    width: 14px;
+    height: 14px;
+  }
+  .reading-theme-title {
+    display: none;
+  }
+}
+
+/* Theme definitions */
+.portfolio-shell[data-reading-theme="dark"] {
+  --read-bg: #111111;
+  --read-fg: #f5ddd5;
+  --read-body: #c4b9b2;
+  --read-h2: #ffffff;
+  --read-muted: #ad9e99;
+  --read-accent: #ff8566;
+  --read-blockquote-bg: rgba(255, 138, 102, 0.05);
+  --read-blockquote-border: #ff8566;
+  --read-blockquote-text: #f5ddd5;
+  --read-divider: rgba(255, 255, 255, 0.08);
+  --read-border: #343231;
+  --read-card-bg: rgba(255, 255, 255, 0.05);
+  --read-card-border: rgba(255, 255, 255, 0.1);
+  --read-card-active: rgba(255, 255, 255, 0.14);
+  --read-nav-color: #FF8A66;
+  --read-nav-active: #FFE3DB;
+}
+
+.portfolio-shell[data-reading-theme="cream"] {
+  --read-bg: #fbf7ee;
+  --read-fg: #2c2521;
+  --read-body: #3c332e;
+  --read-h2: #1c1714;
+  --read-muted: #786c64;
+  --read-accent: #c45532;
+  --read-blockquote-bg: rgba(196, 85, 50, 0.07);
+  --read-blockquote-border: #c45532;
+  --read-blockquote-text: #201a17;
+  --read-divider: rgba(60, 45, 35, 0.12);
+  --read-border: rgba(60, 45, 35, 0.16);
+  --read-card-bg: rgba(60, 45, 35, 0.05);
+  --read-card-border: rgba(60, 45, 35, 0.12);
+  --read-card-active: #ffffff;
+  --read-nav-color: #a44020;
+  --read-nav-active: #5f2410;
+}
+
+.portfolio-shell[data-reading-theme="white"] {
+  --read-bg: #ffffff;
+  --read-fg: #1f2328;
+  --read-body: #2d333a;
+  --read-h2: #0f1216;
+  --read-muted: #656d76;
+  --read-accent: #d94e28;
+  --read-blockquote-bg: #f6f8fa;
+  --read-blockquote-border: #d94e28;
+  --read-blockquote-text: #1f2328;
+  --read-divider: #e5e7eb;
+  --read-border: #e1e4e8;
+  --read-card-bg: #f3f4f6;
+  --read-card-border: #e5e7eb;
+  --read-card-active: #ffffff;
+  --read-nav-color: #ba401c;
+  --read-nav-active: #78220a;
+}
+
+.portfolio-shell[data-reading-theme="slate"] {
+  --read-bg: #eceff2;
+  --read-fg: #1c242e;
+  --read-body: #2b3542;
+  --read-h2: #111720;
+  --read-muted: #5e6c7d;
+  --read-accent: #3b6079;
+  --read-blockquote-bg: rgba(59, 96, 121, 0.08);
+  --read-blockquote-border: #3b6079;
+  --read-blockquote-text: #111720;
+  --read-divider: rgba(30, 45, 60, 0.12);
+  --read-border: rgba(30, 45, 60, 0.14);
+  --read-card-bg: rgba(30, 45, 60, 0.05);
+  --read-card-border: rgba(30, 45, 60, 0.12);
+  --read-card-active: #ffffff;
+  --read-nav-color: #27495f;
+  --read-nav-active: #0f2433;
+}
+
+.portfolio-shell[data-reading-theme="sage"] {
+  --read-bg: #edf3ec;
+  --read-fg: #1f2b20;
+  --read-body: #2d3b2e;
+  --read-h2: #121c13;
+  --read-muted: #5d705f;
+  --read-accent: #3e6e47;
+  --read-blockquote-bg: rgba(62, 110, 71, 0.08);
+  --read-blockquote-border: #3e6e47;
+  --read-blockquote-text: #121c13;
+  --read-divider: rgba(35, 55, 38, 0.12);
+  --read-border: rgba(35, 55, 38, 0.14);
+  --read-card-bg: rgba(35, 55, 38, 0.05);
+  --read-card-border: rgba(35, 55, 38, 0.12);
+  --read-card-active: #ffffff;
+  --read-nav-color: #2d5535;
+  --read-nav-active: #132e18;
+}
+
+.portfolio-shell[data-reading-theme="sand"] {
+  --read-bg: #f6eee8;
+  --read-fg: #2f2521;
+  --read-body: #3f322c;
+  --read-h2: #1d1512;
+  --read-muted: #79665f;
+  --read-accent: #b4573b;
+  --read-blockquote-bg: rgba(180, 87, 59, 0.08);
+  --read-blockquote-border: #b4573b;
+  --read-blockquote-text: #1d1512;
+  --read-divider: rgba(60, 40, 35, 0.12);
+  --read-border: rgba(60, 40, 35, 0.14);
+  --read-card-bg: rgba(60, 40, 35, 0.05);
+  --read-card-border: rgba(60, 40, 35, 0.12);
+  --read-card-active: #ffffff;
+  --read-nav-color: #9d462c;
+  --read-nav-active: #5c2312;
+}
+
+/* Theme overrides for post-detail & container */
+.portfolio-shell[data-reading-theme] .post-detail {
+  background-color: var(--read-bg);
+  color: var(--read-fg);
+  border-top-color: var(--read-border);
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-shell[data-reading-theme] .section-stage {
+  background-color: var(--read-bg);
+  scrollbar-color: var(--read-accent) transparent;
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-shell[data-reading-theme] .site-header {
+  background: linear-gradient(var(--read-bg), transparent);
+  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-shell[data-reading-theme] .top-nav button {
+  color: var(--read-nav-color);
+}
+
+.portfolio-shell[data-reading-theme] .top-nav button:hover,
+.portfolio-shell[data-reading-theme] .top-nav button.active {
+  color: var(--read-nav-active);
+}
+
+.portfolio-shell[data-reading-theme] .post-detail h2 {
+  color: var(--read-h2);
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-shell[data-reading-theme] .post-detail .detail-summary {
+  color: var(--read-muted);
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-shell[data-reading-theme] .post-detail .detail-kicker {
+  color: var(--read-accent);
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-shell[data-reading-theme] .post-detail .back-link {
+  color: var(--read-muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.portfolio-shell[data-reading-theme] .post-detail .back-link:hover {
+  color: var(--read-accent);
+}
+
+.portfolio-shell[data-reading-theme] .post-body p {
+  color: var(--read-body);
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-shell[data-reading-theme] .post-body .post-signoff {
+  color: var(--read-h2);
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-shell[data-reading-theme] .post-body blockquote {
+  border-left-color: var(--read-blockquote-border);
+  background-color: var(--read-blockquote-bg);
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-shell[data-reading-theme] .post-body blockquote p {
+  color: var(--read-blockquote-text);
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-shell[data-reading-theme] .post-body hr.post-divider {
+  background: var(--read-divider);
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-shell[data-reading-theme] .post-body h3 {
+  color: var(--read-h2);
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-shell[data-reading-theme] .post-body .post-list {
+  color: var(--read-body);
+}
+
+.portfolio-shell[data-reading-theme] .post-body .post-list li strong {
+  color: var(--read-h2);
+}
+
+/* Ensure Side Rail is strictly protected in its dark native style */
+.side-rail {
+  background: #272727 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.side-rail button,
+.side-rail a {
+  color: #807772 !important;
+}
+
+.side-rail button:hover,
+.side-rail button.active,
+.side-rail a:hover {
+  color: #ff8566 !important;
+}
+
 .project-row strong {
   font: 28px var(--font-display);
   font-weight: 400;

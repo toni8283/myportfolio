@@ -279,6 +279,23 @@ function EduTimeline() {
   )
 }
 
+export type ReadingTheme = 'dark' | 'cream' | 'white' | 'slate' | 'sage' | 'sand'
+
+export const READING_THEMES: {
+  id: ReadingTheme
+  name: string
+  label: string
+  bg: string
+  border: string
+}[] = [
+  { id: 'dark', name: 'Dark', label: 'Dark / Obsidian', bg: '#111111', border: '#444444' },
+  { id: 'cream', name: 'Cream', label: 'Warm Cream / Sepia', bg: '#fbf7ee', border: '#d8cfba' },
+  { id: 'white', name: 'White', label: 'Paper White', bg: '#ffffff', border: '#cbd5e1' },
+  { id: 'slate', name: 'Slate', label: 'Slate Grey / E-Ink', bg: '#eceff2', border: '#c5cbd3' },
+  { id: 'sage', name: 'Sage', label: 'Soft Sage / Eye Care', bg: '#edf3ec', border: '#c3d3c2' },
+  { id: 'sand', name: 'Sand', label: 'Warm Sand / Clay', bg: '#f6eee8', border: '#d9c9be' },
+]
+
 export default function Page() {
   const [greetingIndex, setGreetingIndex] = useState(0)
   const [isGreetingExiting, setIsGreetingExiting] = useState(false)
@@ -288,6 +305,23 @@ export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [view, setView] = useState<View>('home')
   const [formSent, setFormSent] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [readingTheme, setReadingTheme] = useState<ReadingTheme>('dark')
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('tb_reading_theme') as ReadingTheme
+      if (saved && READING_THEMES.some((t) => t.id === saved)) {
+        setReadingTheme(saved)
+      }
+    } catch {}
+  }, [])
+
+  const handleSetReadingTheme = (theme: ReadingTheme) => {
+    setReadingTheme(theme)
+    try {
+      localStorage.setItem('tb_reading_theme', theme)
+    } catch {}
+  }
 
   const triggerNoLiveNotice = () => {
     if (noticeTimerRef.current.hold) clearTimeout(noticeTimerRef.current.hold)
@@ -417,8 +451,32 @@ export default function Page() {
 
 
     if (post) return (
-      <article className="post-detail section-frame content-section">
-        <button className="back-link" onClick={() => navigate('writing')}><ArrowLeft size={16} /> back to writing</button>
+      <article className="post-detail section-frame content-section" data-reading-theme={readingTheme}>
+        <div className="reading-toolbar">
+          <button className="back-link" onClick={() => navigate('writing')}>
+            <ArrowLeft size={16} /> back to writing
+          </button>
+          <div className="reading-theme-picker" role="radiogroup" aria-label="Reading theme">
+            <span className="reading-theme-title">Theme</span>
+            <div className="reading-theme-options">
+              {READING_THEMES.map((t) => (
+                <button
+                  key={t.id}
+                  type="button"
+                  className={`reading-theme-btn ${readingTheme === t.id ? 'active' : ''}`}
+                  style={{ '--theme-swatch': t.bg, '--theme-border': t.border } as React.CSSProperties}
+                  onClick={() => handleSetReadingTheme(t.id)}
+                  title={t.label}
+                  aria-label={`${t.label} reading mode`}
+                  aria-pressed={readingTheme === t.id}
+                >
+                  <span className="theme-circle" />
+                  <span className="theme-btn-label">{t.name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
         <div className="detail-kicker">Personal notes / {post.date} · {post.readTime} · {post.tag}</div>
         <h2>{post.title}</h2>
         <p className="detail-summary">{post.excerpt}</p>
@@ -648,11 +706,11 @@ export default function Page() {
         </div>
       </section>
     )
-  }, [project, post, view, greeting, isGreetingExiting, noLiveNotice, noLiveExiting, formSent])
+  }, [project, post, view, greeting, isGreetingExiting, noLiveNotice, noLiveExiting, formSent, readingTheme])
 
 
   return (
-    <main className="portfolio-shell">
+    <main className="portfolio-shell" data-reading-theme={post ? readingTheme : undefined}>
       <header className="site-header">
         <div className="desktop-navigation">
           <Navigation active={active} view={view} onNavigate={navigate} />
