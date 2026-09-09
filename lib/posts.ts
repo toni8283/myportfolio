@@ -26,7 +26,7 @@ export const posts: Post[] = [
     date: '09.09.26',
     readTime: '4 min read',
     tag: 'Product Craft',
-    excerpt: 'Why I built Chalo — on chai, spontaneity, and making software whose only goal is to help two people put their phones away.',
+    excerpt: 'Why I built Chalo: on chai, spontaneity, and making software whose only goal is to help two people put their phones away.',
     sections: [
       {
         text: [
@@ -78,7 +78,7 @@ export const posts: Post[] = [
         text: [
           'I didn\'t want Chalo to feel like another social media app asking for your attention. There is already enough of that.',
           'I wanted it to feel a little calmer. A little warmer. Like opening a door and finding that something is already happening on the other side.',
-          'That influenced everything—from the colors and spacing to the way activities are presented and how quickly you can create one.',
+          'That influenced everything: from the colors and spacing to the way activities are presented and how quickly you can create one.',
           'I kept coming back to one question: Can this feel as easy as asking a friend? Because people don\'t think in forms and database fields. They think:',
         ],
         callout: '“Let\'s go for chai.”',
@@ -122,7 +122,7 @@ export const posts: Post[] = [
       },
       {
         text: [
-          '— Toni',
+          '- Toni',
         ],
       },
     ],

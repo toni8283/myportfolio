@@ -427,7 +427,7 @@ export default function Page() {
             <div key={idx} className="post-section">
               {sec.heading && <h3>{sec.heading}</h3>}
               {sec.text?.map((para, pIdx) => (
-                <p key={pIdx} className={para.startsWith('—') ? 'post-signoff' : undefined}>{para}</p>
+                <p key={pIdx} className={para.startsWith('-') || para.startsWith('—') ? 'post-signoff' : undefined}>{para}</p>
               ))}
               {sec.callout && (
                 <blockquote>
@@ -491,7 +491,7 @@ export default function Page() {
             I&apos;m Toni Blair, an Ocean Engineering student at IIT Kharagpur graduating in 2028 who somehow ended up falling deep into the world of software, AI, and design.
           </p>
           <p>
-            I&apos;m naturally curious about how things work. When I come across something interesting, I rarely stop at knowing <em>what</em> it does — I want to understand <em>why</em> it works, what&apos;s happening underneath it, and how I could build it myself. That curiosity has taken me from exploring Linux and operating systems to building full-stack applications, experimenting with AI, and designing digital products.
+            I&apos;m naturally curious about how things work. When I come across something interesting, I rarely stop at knowing <em>what</em> it does, I want to understand <em>why</em> it works, what&apos;s happening underneath it, and how I could build it myself. That curiosity has taken me from exploring Linux and operating systems to building full-stack applications, experimenting with AI, and designing digital products.
           </p>
 
           <h3>What I work with</h3>
@@ -524,7 +524,7 @@ export default function Page() {
             I want to become someone who can take an idea from a rough thought, understand the problem behind it, design the experience, engineer the system, and turn it into something real.
           </p>
           <p>
-            I&apos;m still learning, and I don&apos;t want to pretend otherwise. I&apos;d rather show the process — the things I&apos;m building, the things I&apos;m breaking, and the things I&apos;m learning along the way.
+            I&apos;m still learning, and I don&apos;t want to pretend otherwise. I&apos;d rather show the process: the things I&apos;m building, the things I&apos;m breaking, and the things I&apos;m learning along the way.
           </p>
 
           <div className="about-mantra">
@@ -622,7 +622,7 @@ export default function Page() {
             }}
           >
             <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? ''} />
-            <input type="hidden" name="subject" value="New message from portfolio — Toni Blair" />
+            <input type="hidden" name="subject" value="New message from portfolio: Toni Blair" />
             <input type="hidden" name="from_name" value="Portfolio Contact Form" />
 
             {formSent === 'sent' ? (
@@ -637,7 +637,7 @@ export default function Page() {
                 <label>Name<input required name="name" placeholder="Your name" disabled={formSent === 'sending'} /></label>
                 <label>Email<input required name="email" type="email" placeholder="you@email.com" disabled={formSent === 'sending'} /></label>
                 <label>Message<textarea required name="message" rows={4} placeholder="Tell me what you are thinking about..." disabled={formSent === 'sending'} /></label>
-                {formSent === 'error' && <p className="form-error">Something went wrong — try emailing me directly.</p>}
+                {formSent === 'error' && <p className="form-error">Something went wrong: please try emailing me directly.</p>}
                 <button type="submit" disabled={formSent === 'sending'}>
                   {formSent === 'sending' ? 'Sending…' : 'Send message'} <Send size={15} />
                 </button>
