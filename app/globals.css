@@ -684,6 +684,12 @@ h2 em {
   line-height: 1.8;
 }
 
+.post-body .post-signoff {
+  font: italic 22px/1.4 var(--font-display);
+  color: var(--foreground);
+  margin-top: 36px;
+}
+
 .post-body blockquote {
   border-left: 3px solid var(--primary);
   margin: 28px 0;

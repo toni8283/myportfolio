@@ -427,7 +427,7 @@ export default function Page() {
             <div key={idx} className="post-section">
               {sec.heading && <h3>{sec.heading}</h3>}
               {sec.text?.map((para, pIdx) => (
-                <p key={pIdx}>{para}</p>
+                <p key={pIdx} className={para.startsWith('—') ? 'post-signoff' : undefined}>{para}</p>
               ))}
               {sec.callout && (
                 <blockquote>
