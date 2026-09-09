@@ -204,7 +204,7 @@ function SideRail({ active, onNavigate }: { active: Section; onNavigate: (sectio
       <a
         className="side-rail-download"
         href="/toni_cv.pdf"
-        download
+        download="Toni_Blair_CV.pdf"
         aria-label="Download CV"
         title="Download CV"
       >
