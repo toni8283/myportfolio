@@ -7,7 +7,7 @@ const geist = Geist({ subsets: ['latin'], variable: '--font-body' })
 const instrumentSerif = Instrument_Serif({ weight: '400', subsets: ['latin'], variable: '--font-display' })
 
 export const metadata: Metadata = {
-  title: 'Toni Blair — Design Engineer & Product Systems',
+  title: 'Toni Blair: Design Engineer & Product Systems',
   description:
     'Portfolio of Toni Blair: IIT Kharagpur engineer designing content-led AI interfaces, full-stack systems, and high-performance digital products from Figma to shipped code.',
   keywords: [
