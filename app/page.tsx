@@ -425,6 +425,7 @@ export default function Page() {
         <div className="post-body">
           {post.sections.map((sec, idx) => (
             <div key={idx} className="post-section">
+              {sec.divider && <hr className="post-divider" />}
               {sec.heading && <h3>{sec.heading}</h3>}
               {sec.text?.map((para, pIdx) => (
                 <p key={pIdx} className={para.startsWith('-') || para.startsWith('—') ? 'post-signoff' : undefined}>{para}</p>
