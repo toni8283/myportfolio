@@ -464,13 +464,15 @@ export default function Page() {
                   key={t.id}
                   type="button"
                   className={`reading-theme-btn ${readingTheme === t.id ? 'active' : ''}`}
-                  style={{ '--theme-swatch': t.bg, '--theme-border': t.border } as React.CSSProperties}
                   onClick={() => handleSetReadingTheme(t.id)}
                   title={t.label}
                   aria-label={`${t.label} reading mode`}
                   aria-pressed={readingTheme === t.id}
                 >
-                  <span className="theme-circle" />
+                  <span
+                    className="theme-circle"
+                    style={{ backgroundColor: t.bg }}
+                  />
                   <span className="theme-btn-label">{t.name}</span>
                 </button>
               ))}
