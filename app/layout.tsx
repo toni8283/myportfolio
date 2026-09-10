@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     'Toni Blair github',
     'Toni Blair software',
     'Chalo app Toni Blair',
-    'We Were Fine Yesterday Toni Blair',
+    'The Unseen Test of Character Toni Blair',
     'Design Engineer',
     'Product Designer',
     'Full Stack Engineer',
