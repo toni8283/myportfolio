@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight, BriefcaseBusiness, Download, ExternalLink, Fil
 import IsometricDotLaptop from '@/components/IsometricDotLaptop'
 import WritingPenAnimation from '@/components/WritingPenAnimation'
 import { posts } from '@/lib/posts'
+import { projects } from '@/lib/projects'
 
 const greetings = [
   { word: 'Hello', language: 'English' },
@@ -17,87 +18,6 @@ const greetings = [
   { word: 'こんにちは', language: 'Japanese' },
   { word: 'Bonjour', language: 'French' },
   { word: 'Hola', language: 'Spanish' },
-]
-
-const projects = [
-  {
-    slug: 'chalo',
-    name: 'Chalo/app',
-    type: 'Mobile · Full-Stack',
-    year: '2025',
-    summary: 'A location-aware social discovery platform that turns spontaneous plans into real-world human connections in real time.',
-    body: 'Chalo is engineered to make spontaneous social connections effortless. I built the cross-platform mobile client in React Native and Expo with fluid gestures and an editorial iOS-style aesthetic, backed by a high-performance FastAPI service. The architecture incorporates phone OTP authentication via SMS gateway, stateless JWT sessions, connection-pooled PostgreSQL via asyncpg and SQLAlchemy, and modular Docker microservices. Currently in active development: geospatial proximity indexing, WebSocket event subscriptions, and algorithmic meetup recommendations.',
-    caseStudy: {
-      problem: 'Spontaneous social planning is ruined by decision friction, endless group chat latency, and awkward location sharing while moving through transit.',
-      strategy: 'Engineered load-bearing micro-copy and single-tap state transitions for distracted, one-handed mobile use. Designed the full design system in Figma before translating into React Native and FastAPI microservices.',
-      rejected: 'Rejected a 4-step calendar scheduling wizard and multi-tier permission modal. Field tests showed 40%+ drop-off; replaced with an instantaneous "Heading Out" presence toggle.',
-      shipped: 'Reduced task completion time to under 4 seconds. Deployed with sub-100ms API response latency on containerized FastAPI services.',
-    },
-    tech: 'React Native · Expo · FastAPI · PostgreSQL · Async SQLAlchemy · asyncpg · Docker · JWT · Pydantic',
-    github: 'https://github.com/toni8283/chaloapp_IN',
-    figma: 'https://www.figma.com/design/QbN5fZs8MJZ6jRkkZIBAd7/chalo?t=TDYkoz5d11xkibGa-1',
-    live: null,
-  },
-  {
-    slug: 'cinema-ai',
-    name: 'CineInsight/AI',
-    type: 'AI · Web App',
-    year: '2026',
-    summary: 'An AI-powered cinema intelligence platform orchestrating film metadata and Google Gemini LLM sentiment classification.',
-    body: 'CineInsight is an AI-powered film analytics platform that performs automated sentiment intelligence across cinema titles. Built on Next.js 16 App Router with server-side rendering (SSR), it orchestrates real-time external data pipelines between the OMDb metadata catalog and Google Gemini LLM to classify critical reviews into structured sentiment insights. Features random seed generation for dynamic recommendations, strict end-to-end TypeScript type safety, and an atmospheric cinematic dark theme built with Tailwind CSS 4. Deployed and edge-optimized on Vercel.',
-    caseStudy: {
-      problem: 'Film enthusiasts are overwhelmed by generic star ratings and long, verbose reviews that fail to communicate tone, emotional intensity, or cinematic pacing.',
-      strategy: 'Transformed unstructured Gemini LLM outputs into structured sentiment teardowns, concise verdict badges, and thematic tags ("Atmospheric", "Slow-Burn", "Subversive").',
-      rejected: 'Rejected unconstrained conversational AI chat summaries. Users skimmed past long text walls; enforcing strict JSON schema outputs and concise tag hierarchy doubled engagement.',
-      shipped: 'Achieved sub-3-second movie vibe assessment and 2.4x higher recommendation click-through rate. Deployed edge-optimized on Vercel.',
-    },
-    tech: 'Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · Google Gemini API · OMDb API · SSR · Vercel',
-    github: 'https://github.com/toni8283/CINEMA_AI',
-    figma: 'https://www.figma.com/design/xUaQijMBHOKkQkxv1qOCTl/Untitled?node-id=0-1&t=WjQmkY98ARI0mGYA-1',
-    live: 'https://cinema-ai-jxj8.vercel.app/',
-  },
-  {
-    slug: 'vc-scout',
-    name: 'VC Scout/AI',
-    type: 'FinTech · Full-Stack',
-    year: '2025',
-    summary: 'A venture capital diligence interface to discover, filter, and analyze startups with live AI website data enrichment.',
-    body: 'A production-grade deal-sourcing and venture diligence interface engineered to accelerate startup evaluation. The platform features sub-millisecond client-side indexing across startup portfolios, multi-facet filtering (sector, funding round, valuation stage), custom target list curation with CSV serialization, and saved query persistence. Architected a live on-demand website enrichment engine via Next.js server-side API routes, isolating sensitive scraper credentials and transforming unstructured company data into structured diligence metrics. State management is powered by a normalized, persistent Zustand store with zero layout shifts. Deployed live on Vercel.',
-    caseStudy: {
-      problem: 'Venture analysts spend hours reading unstructured founder pitches where vocabulary does not align with standard investment taxonomy.',
-      strategy: 'Built a deterministic diligence interface over probabilistic data: paired semantic company vector indexing with explicit taxonomy facets, valuation metrics, and live enrichment summaries.',
-      rejected: 'Rejected an open-ended conversational chatbot. Early testing proved analysts hated waiting for streaming chat text when comparing 50 startups; direct card grids with semantic filters delivered 10x faster insights.',
-      shipped: 'Decreased startup diligence research time by 70%. Built from problem definition to deployed Vercel application without external designers.',
-    },
-    tech: 'Next.js 14 · React 18 · TypeScript · Tailwind CSS · Zustand · Server APIs · Web Scraping · Vercel',
-    github: 'https://github.com/toni8283/VC_intelligence_interface',
-    figma: null,
-    live: 'https://vc-intelligence-interface-gamma.vercel.app/',
-  },
-  {
-    slug: 'wyrm',
-    name: 'Wyrm Store',
-    type: 'E-Commerce · Full-Stack',
-    year: '2024',
-    summary: 'A full-stack e-commerce system with stateless JWT auth, role-based admin controls, cart transactions, and revenue analytics.',
-    body: 'Wyrm Store is a full-stack e-commerce application engineered with a decoupled RESTful architecture. The Node.js and Express backend implements secure JWT authentication with bcrypt password hashing, granular role-based access control (RBAC) separating customer and administrative permissions, and MongoDB schema designs for transactional order lifecycles. Features include automated Cloudinary image ingestion pipelines, transactional cart checkout workflows, and an administrative dashboard delivering rolling 30-day sales analytics and inventory CRUD.',
-    tech: 'React (Vite) · Node.js · Express.js · MongoDB · Mongoose · JWT · Cloudinary · RESTful APIs',
-    github: 'https://github.com/toni8283/eCommerce_website',
-    figma: null,
-    live: null,
-  },
-  {
-    slug: 'http-server',
-    name: 'HTTP Server/C',
-    type: 'Systems · Low-level',
-    year: '2024',
-    summary: 'A concurrent multithreaded HTTP server written from first principles in ANSI C using raw POSIX sockets and pthreads.',
-    body: 'Engineered from first principles in ANSI C to master low-level systems programming, network socket communication, and concurrent client handling without third-party frameworks. Creates IPv4 TCP stream sockets (AF_INET, SOCK_STREAM), binds and listens on port 8080, and handles concurrent client connections via POSIX threads (pthreads). Implements manual zero-copy HTTP/1.1 request buffer parsing, static file I/O from disk, dynamic MIME type detection, RFC-compliant response header generation, and robust 404/500 status handling. Configured with SO_REUSEADDR for rapid socket recycling and built with standard GNU Make.',
-    tech: 'ANSI C · POSIX Sockets · pthreads · Systems Programming · Concurrency · HTTP/1.1 · Linux · GNU Make',
-    github: 'https://github.com/toni8283/Multithreaded-HTTP-Server',
-    figma: null,
-    live: null,
-  },
 ]
 
 const education = [
@@ -145,6 +65,9 @@ function Navigation({ active, view, onNavigate, onClose }: { active: Section; vi
       ? [
           { label: 'Projects',    destination: 'projects'           },
           { label: 'Chalo app',   destination: 'project:chalo'      },
+          { label: 'Vaani',       destination: 'project:vaani'      },
+          { label: 'DeadCode',    destination: 'project:deadcode'   },
+          { label: 'Komal AI',    destination: 'project:komal-ai'   },
           { label: 'CineInsight', destination: 'project:cinema-ai'  },
           { label: 'VC Scout',    destination: 'project:vc-scout'   },
           { label: 'Wyrm Store',  destination: 'project:wyrm'       },
@@ -239,24 +162,35 @@ function FigmaIcon({ size = 22 }: { size?: number }) {
 function LinkOrb({
   href,
   label,
+  sublabel,
+  title,
   onClick,
   children,
 }: {
   href?: string | null
   label: string
+  sublabel?: string
+  title?: string
   onClick?: () => void
   children: React.ReactNode
 }) {
+  const content = (
+    <>
+      {children}
+      <span>{label}</span>
+      {sublabel && <small className="orb-sublabel">{sublabel}</small>}
+    </>
+  )
   if (href) {
     return (
-      <a className="link-orb" href={href} target="_blank" rel="noreferrer" aria-label={label}>
-        {children}<span>{label}</span>
+      <a className="link-orb" href={href} target="_blank" rel="noreferrer" aria-label={label} title={title || label}>
+        {content}
       </a>
     )
   }
   return (
-    <button type="button" className="link-orb" onClick={onClick} aria-label={label}>
-      {children}<span>{label}</span>
+    <button type="button" className="link-orb" onClick={onClick} aria-label={label} title={title || label}>
+      {content}
     </button>
   )
 }
@@ -425,13 +359,35 @@ export default function Page() {
 
           <aside className="project-detail-sidebar">
             <div className="project-orbs">
-              <LinkOrb href={project.github} label="GitHub"><GitBranch size={24} /></LinkOrb>
+              {project.github && (
+                <LinkOrb
+                  href={project.github}
+                  label={project.githubLabel || 'GitHub'}
+                  sublabel={project.githubSublabel}
+                  title={project.githubLabel || 'GitHub'}
+                >
+                  <GitBranch size={24} />
+                </LinkOrb>
+              )}
+              {project.githubBackend && (
+                <LinkOrb
+                  href={project.githubBackend}
+                  label={project.githubBackendLabel || 'GitHub (Backend)'}
+                  sublabel={project.githubBackendSublabel}
+                  title={project.githubBackendLabel || 'GitHub (Backend)'}
+                >
+                  <GitBranch size={24} />
+                </LinkOrb>
+              )}
               {project.figma && (
-                <LinkOrb href={project.figma} label="Figma"><FigmaIcon size={21} /></LinkOrb>
+                <LinkOrb href={project.figma} label="Figma" title="Figma">
+                  <FigmaIcon size={21} />
+                </LinkOrb>
               )}
               <LinkOrb
                 href={project.live}
                 label="Live demo"
+                title="Live demo"
                 onClick={!project.live ? triggerNoLiveNotice : undefined}
               >
                 <ExternalLink size={23} />
@@ -607,6 +563,18 @@ export default function Page() {
           <div className="projects-intro-col">
             <h2>Selected<br /><em>work.</em></h2>
             <p>Choose a project from the top navigation to explore its story, architecture, tools, and live links.</p>
+            <div className="projects-quick-links">
+              {projects.map((p) => (
+                <button
+                  key={p.slug}
+                  onClick={() => navigate(`project:${p.slug}`)}
+                  className="project-pill"
+                >
+                  <span>{p.name.split('/')[0]}</span>
+                  <ArrowUpRight size={13} />
+                </button>
+              ))}
+            </div>
           </div>
           <div className="projects-visual-col">
             <IsometricDotLaptop />

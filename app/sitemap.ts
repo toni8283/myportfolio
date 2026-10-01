@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { posts } from '@/lib/posts'
+import { projects } from '@/lib/projects'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
@@ -41,6 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
+    url: baseUrl + '/#project:' + project.slug,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.9,
+  }))
+
   const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
     url: baseUrl + '/#post:' + post.slug,
     lastModified: new Date(),
@@ -48,5 +56,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticRoutes, ...postRoutes]
+  return [...staticRoutes, ...projectRoutes, ...postRoutes]
 }

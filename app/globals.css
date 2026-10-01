@@ -101,7 +101,10 @@ button {
 
 .top-nav {
   display: flex;
-  gap: 34px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px clamp(16px, 2vw, 32px);
   font: 14px var(--font-display);
 }
 
@@ -571,10 +574,12 @@ h2 em {
 .project-orbs {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 14px;
 }
 
 .link-orb {
+  position: relative;
   display: flex;
   width: 72px;
   height: 72px;
@@ -594,6 +599,30 @@ h2 em {
   background: var(--primary);
   color: var(--primary-foreground);
   transform: translateY(-4px);
+}
+
+.orb-sublabel {
+  position: absolute;
+  bottom: -6px;
+  background: var(--background);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-size: 9px;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 6px;
+  border-radius: 999px;
+  white-space: nowrap;
+  pointer-events: none;
+  line-height: 1.2;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.link-orb:hover .orb-sublabel {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary-foreground);
 }
 
 .link-orb span {
@@ -1564,6 +1593,36 @@ h2 em {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.projects-quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+  max-width: 440px;
+}
+
+.project-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted-foreground);
+  font-size: 13px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.project-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+  background: rgba(255, 138, 102, 0.08);
 }
 
 /* Isometric Dot-Matrix Laptop: Open, natural stage with unclipped ambient glow */
