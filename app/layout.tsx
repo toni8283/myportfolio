@@ -15,11 +15,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Toni Blair: Design Engineer, AI & Full-Stack Developer | Portfolio',
+    default: 'Toni Blair: Product Engineer, Full-Stack & AI Systems | Portfolio',
     template: '%s | Toni Blair',
   },
   description:
-    'Official portfolio of Toni Blair: IIT Kharagpur engineer and design technologist crafting AI interfaces, full-stack systems, and digital products. Featured projects: Chalo, Vaani, DeadCode, Komal AI, personal essays, and open-source software.',
+    'Official portfolio of Toni Blair: IIT Kharagpur engineer crafting AI interfaces, full-stack systems, and digital products. Featured projects: Chalo, Vaani, DeadCode, Komal AI, personal essays, and open-source software.',
   applicationName: 'Toni Blair Portfolio',
   keywords: [
     'Toni Blair',
@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     'Toni Blair IIT Kharagpur',
     'Toni Blair developer',
     'Toni Blair engineer',
+    'Toni Blair product engineer',
     'Toni Blair design engineer',
     'toni8283',
     'toni8283 portfolio',
@@ -37,6 +38,7 @@ export const metadata: Metadata = {
     'DeadCode static analysis Toni Blair',
     'Komal AI voice companion Toni Blair',
     'The Unseen Test of Character Toni Blair',
+    'Product Engineer',
     'Design Engineer',
     'Product Designer',
     'Full Stack Engineer',
@@ -63,9 +65,9 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'Toni Blair: Design Engineer & Product Systems',
+    title: 'Toni Blair: Product Engineer, Full-Stack & AI Systems',
     description:
-      'Official portfolio of Toni Blair: IIT Kharagpur engineer designing content-led AI interfaces, full-stack systems, and digital products from Figma to shipped code.',
+      'Official portfolio of Toni Blair: IIT Kharagpur engineer crafting full-stack systems, AI voice agents, and digital products from Figma to shipped code.',
     url: '/',
     siteName: 'Toni Blair Portfolio',
     locale: 'en_US',
@@ -73,9 +75,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Toni Blair: Design Engineer & Product Systems',
+    title: 'Toni Blair: Product Engineer, Full-Stack & AI Systems',
     description:
-      'Official portfolio of Toni Blair: IIT Kharagpur engineer designing content-led AI interfaces, full-stack systems, and digital products from Figma to shipped code.',
+      'Official portfolio of Toni Blair: IIT Kharagpur engineer crafting full-stack systems, AI voice agents, and digital products from Figma to shipped code.',
     creator: '@toni8283',
   },
   robots: {
@@ -108,7 +110,7 @@ const jsonLd = {
       name: 'Toni Blair',
       alternateName: ['Toni', 'toni8283'],
       url: siteUrl,
-      jobTitle: 'Design Engineer & Software Developer',
+      jobTitle: 'Product Engineer, Full-Stack & AI Systems',
       description:
         'IIT Kharagpur engineer and designer building full-stack software, AI interfaces, and digital products.',
       alumniOf: {

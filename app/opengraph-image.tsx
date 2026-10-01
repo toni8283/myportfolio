@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'nodejs'
-export const alt = 'Toni Blair: Design Engineer & Product Systems'
+export const alt = 'Toni Blair: Product Engineer, Full-Stack & AI Systems'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -47,7 +47,7 @@ export default async function Image() {
             Toni Blair
           </div>
           <div style={{ fontSize: '32px', color: '#ad9e99', lineHeight: 1.35 }}>
-            Design Engineer &amp; Full-Stack Systems
+            Product Engineer · Full-Stack &amp; AI Systems
           </div>
         </div>
 

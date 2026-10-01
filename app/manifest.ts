@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Toni Blair: Portfolio',
     short_name: 'Toni Blair',
-    description: 'Portfolio of Toni Blair: Design Engineer, Full-Stack Developer & IIT Kharagpur engineer.',
+    description: 'Portfolio of Toni Blair: Product Engineer, Full-Stack & AI Systems | IIT Kharagpur.',
     start_url: '/',
     display: 'standalone',
     background_color: '#111111',

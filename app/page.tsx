@@ -490,7 +490,7 @@ export default function Page() {
           </div>
         </div>
         <div className="hero-intro">
-          <p className="eyebrow">design engineer <span>·</span> product &amp; content systems</p>
+          <p className="eyebrow">product engineer <span>·</span> full-stack &amp; AI systems</p>
           <h1 id="home-title">I&apos;m <em>Toni</em><br />Blair<span className="period">.</span></h1>
           <p className="hero-note">I shape products made of language,<br className="desktop-only" /> and build them from Figma to shipped code.</p>
         </div>
